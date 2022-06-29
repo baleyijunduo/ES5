@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //接受函数作为参数或将函数作为返回值输出的就是高阶函数
+        //这就是高阶函数
+        function fn(a,b,callback){
+            console.log(a + b);
+        }
+
+        fn(1,2,function(){
+            console.log('最后调用');
+        })
+    </script>
+</body>
+</html>

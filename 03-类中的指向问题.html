@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        class Star{
+            constructor(uname,age){
+                //consturctor里的this指向创建的实例对象
+                this.uname = uname;
+                this.age = age;
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+            }
+            sing(){
+                //方法中的this指向调用者,因为btn按钮调用了这个方法，所以this指向btn 
+                console.log(this);
+            }
+        }
+
+        var ldh = new Star('刘德华',50);
+        ldh.sing;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,age){
+            this.uname = uname;
+            this.age = age;
+        }
+
+        function Son(uname,age,score){
+            //把父构造函数的this变成子构造函数的this
+            //还可以添加自己的属性
+            Father.call(this,uname,age);
+            this.score = score;
+        }
+
+        var son = new Son('刘德华',18,100);
+        console.log(son);
+    </script>
+</body>
+</html>

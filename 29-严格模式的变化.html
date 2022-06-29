@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        // 1.变量名必须先声明再使用
+        var num = 10;
+        //2.不能删除已声明好的变量
+        //delete num;
+        //3.严格模式下，全局作用域函数的this不再指向window，而是undefined
+        function Star(){
+            this.sex = '男';
+        }
+        //4.严格模式下构造函数不加new调用会报错
+        var fn = new Star();
+
+        //5.定时器的this依然指向window
+        //6.严格模式下不能又两个同名形参
+        function fn(a,a){
+            console.log(a + a);
+        }
+        //7.不允许在非函数代码块种定义函数，比如不能在if内定义函数
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var o = {
+            name:'andy'
+        }
+
+        function fn(){
+            console.log(this);
+        }
+
+        //利用call改变this指向,也可以调用函数
+        fn.call(o);
+
+        //call的主要作用是继承
+        function Father(uname,age,sex){
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        function Son(uname,age,sex){
+            Father.call(this,uname,age,sex);
+        }
+        var son = new Son('ldh',18,'男');
+        console.log(son);
+    </script>
+</body>
+</html>

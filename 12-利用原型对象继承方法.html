@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Father(uname,age){
+            this.uname = uname;
+            this.age = age;
+        }
+
+        Father.prototype.money = function(){
+            console.log(10000);
+        }
+        function Son(uname,age,score){
+            Father.call(this,uname,age);
+            this.score = score;
+        }
+        //用Son的原型对象指向Father的实例对象就可实现方法继承
+        Son.prototype = new Father();
+        //因为修改了原型对象的指向，所以要利用constructor指回原来的原型对象
+        Son.prototype.constructor = Son;
+        
+        var son = new Son('刘德华',18,100);
+        console.log(son);
+    </script>
+</body>
+</html>

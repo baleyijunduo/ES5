@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //*,可以出现0次或多次
+        var reg = /^a*$/;
+        console.log(reg.test(''));
+        console.log(reg.test('a'));
+        console.log(reg.test('aaa'));
+
+        //+,可以出现1次或多次
+        var reg1 = /^a+$/;
+        console.log(reg1.test(''));
+        console.log(reg1.test('a'));
+        console.log(reg1.test('aaa'));
+
+        //?,只能出现0次或1次
+        var reg2 = /^a?$/;
+        console.log(reg2.test(''));
+        console.log(reg2.test('a'));
+        console.log(reg2.test('aaa'));
+
+        //{3},只能重复三次
+        var reg3 = /^a{3}$/;
+        console.log(reg3.test(''));
+        console.log(reg3.test('a'));
+        console.log(reg3.test('aaa'));
+        console.log(reg3.test('aaaa'));
+
+        //{3,},大于等于三次
+        var reg4 = /^a{3,}$/;
+        console.log(reg4.test(''));
+        console.log(reg4.test('a'));
+        console.log(reg4.test('aaa'));
+        console.log(reg4.test('aaaa'));
+
+        //{3,5},大于等于三次,小于等于5
+        var reg5 = /^a{3,5}$/;
+        console.log(reg5.test(''));
+        console.log(reg5.test('aaa'));
+        console.log(reg5.test('aaaa'));
+        console.log(reg5.test('aaaaaa'));
+    </script>
+</body>
+</html>

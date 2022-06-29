@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数的调用方法
+        //1.普通函数调用
+        function fu(){
+            console.log('人生巅峰');
+        }
+        //两种普通调用
+        fn(); fn.call();
+        //2.对象方法
+        var o = {
+            sayHi:function(){
+                console.log('雷浩');
+            }
+        }
+        o.sayHi();
+
+        //3.构造函数
+        function Star(){};
+        new Star();
+
+        //4.绑定事件函数
+        btn.onclick = function(){};//点击按钮调用函数
+
+        //5.定时器函数
+        setInterval(function(){},3000);
+
+        //6.立即执行函数(自动调用)
+        (function(){})();
+    </script>
+</body>
+</html>

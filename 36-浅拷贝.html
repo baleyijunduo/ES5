@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝只拷贝一层，深层次的对象级别只拷贝引用
+        //深拷贝拷贝对哦曾，每一级的数据都会拷贝
+        //修改数据会影响原先的数据
+        var obj = {
+            id:1,
+            name:'andy'
+        };
+
+        var o = {};
+        //1.循环方式进行浅拷贝
+        for(var k in obj){
+        //obj的内容拷贝给o
+            o[k] = obj[k];
+        }
+
+        //语法糖
+        Object.assign(o,obj);
+        console.log(o);
+    </script>
+</body>
+</html>
